@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app='NarrowItDownApp'>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body >
+  <div class="container" ng-controller='NarrowItDownController as ctrl'>
+    <h1>Narrow Down Your Chinese Menu Choices</h1>
+
+    <div class="row">
+      <div class="">
+        <input type="text" placeholder="search term" class="form-control" ng-model='ctrl.searchTerm'>
+      </div>
+      <div class="narrow-button">
+        <button class="btn btn-info" ng-click='ctrl.searchItem()'>Narrow It Down For Me!</button>
+      </div>
+    </div>
+    <!-- found-items should be implemented as a component -->
+    <div class="row" style="margin-top: 30px;">
+        <found-items found='ctrl.found' on-remove='ctrl.remove(index)' empty='ctrl.empty'></found-items>
+    </div>
+  </div>
+
+
+  <!-- <section class="row" ng-controller= "NarrowItDownController as narrowItDown">
+    <div class="container" ng-repeat="menu in narrowItDown.menu_items">
+      <div class="menu-item-tile col-lg-6 col-md-6" ng-repeat= "x in menu">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+               <div>{{x.short_name}}</div>
+               <img class="img-responsive" width="250" height="150" src="images/D1.jpg" alt="Item">
+            </div>
+            <div class="menu-item-price">${{x.price_small}}<span> (pint)</span> ${{x.price_large}} <span>(quart)</span></div>
+          </div>
+
+          <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">{{x.name}}</h3>
+            <p class="menu-item-details">{{x.description}}</p>
+          </div>
+      </div>
+    <hr class="visible-xs">
+      </div>
+    </div>
+  </section> -->
+
+</body>
+</html>

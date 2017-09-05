@@ -1,0 +1,38 @@
+<section class="row founditem">
+  <div class="container">
+    <div class="menu-item-tile col-lg-6 col-md-6" ng-repeat='item in found'>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="menu-item-photo">
+             <div>{{item.short_name}}</div>
+             <img class="img-responsive" width="250" height="150" src="images/D1.jpg" alt="Item">
+          </div>
+          <div class="menu-item-price">${{item.price_small}}<span> (pint)</span> ${{item.price_large}} <span>(quart)</span></div>
+        </div>
+
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{item.name}}</h3>
+          <p class="menu-item-details">{{item.description}}</p>
+          <button class="btn btn-warning" ng-click='onRemove({index: $index})'>Don't want this one!</button>
+        </div>
+    </div>
+  <hr class="visible-xs">
+    </div>
+  </div>
+  <div>{{empty}}</div>
+</section>
+<!--
+<br>
+
+<div>
+	<ol>
+		<ul ng-repeat='item in found'>
+		<br>
+			Name: {{item.name}} <br>
+			Short Name: {{item.short_name}} <br>
+			Description: {{item.description}} <br>
+			<button ng-click='onRemove({index: $index})'>Don't want this one!</button>
+		</ul>
+	</ol>
+</div>
+<div>{{empty}}</div> -->
